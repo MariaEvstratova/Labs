@@ -1,13 +1,15 @@
-cmake_minimum_required(VERSION 4.0)
-project(C__)
+cmake_minimum_required(VERSION 3.20)
+project(word_count)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(.)
-include_directories(../0b)
-
-add_executable(C__
+add_executable(word_count
         main.cpp
-        sortByFrequency.cpp
-        sortByFrequency.h
-              )
+        reader.cpp
+        wordCounter.cpp
+        writer.cpp
+        reader.h
+        wordCounter.h
+        writer.h
+)
