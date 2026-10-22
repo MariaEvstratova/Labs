@@ -18,4 +18,6 @@ add_executable(word_count
         reader.h
         wordCounter.h
         writer.h
+        wordStat.h
+        wordStat.cpp
 )

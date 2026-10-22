@@ -1,13 +1,18 @@
+#ifndef WRITER_H
+#define WRITER_H
 #include <fstream>
-#include <list>
 #include <string>
-#include <utility>
+#include <vector>
+#include "wordStat.h"
 
 class Writer {
-private:
-    std::ofstream out_;
 public:
     explicit Writer(const std::string& fileName);
+
     bool isOpen() const;
-    void write(const std::list<std::pair<std::string, int>>& words, int totalCount);
+    void write(const std::string& header, const std::vector<WordStat>& stats);
+
+private:
+    std::ofstream out_;
 };
+#endif

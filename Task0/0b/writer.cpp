@@ -6,10 +6,10 @@ bool Writer::isOpen() const {
     return out_.is_open();
 }
 
-void Writer::write(const std::list<std::pair<std::string, int>>& words, int totalCount) {
-    out_ << "Слово,Частота,Частота(в %)\n";
-    for (const auto& w: words) {
-        double percent = 100.0 * w.second / totalCount;
-        out_ << w.first << "," << w.second << "," << percent << "\n";
+void Writer::write(const std::string& header, const std::vector<WordStat>& stats) {
+    out_ << header << "\n";
+
+    for (const auto& s : stats) {
+        out_ << s.word << "," << s.count << "," << s.percent << "\n";
     }
 }
